@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/uncategorized/hello-world</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>GC垃圾回收</title>
+    <url>/2019/11/09/essay/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p><a href="https://mp.csdn.net/mdeditor#" target="_blank" rel="noopener">csnd练习md编辑器</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">术语</th>
+<th align="left">解释说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Java HotSpot虚拟机</td>
+<td align="left">不同JVM采用不同方法实现垃圾回收oracle se平台标准核心组件的一部分</td>
+</tr>
+<tr>
+<td align="center">JVM体系结构</td>
+<td align="left"><img src="/imgs/JVM.png" alt="Alt"></td>
+</tr>
+<tr>
+<td align="center">Java堆内存</td>
+<td align="left">运行时 java实例被存放在堆内存区域<br>当对象不在被引用时  满足条件后就会从堆内存移除  并且内存空间被回收<br><strong>堆内存三个主要区域</strong>：<br>1.新生代<br>eden空间（任何实例通过eden空间进入运行时内存区域）<br>so survior空间（存在时间长的实例将会从eden空间移动到so survivor空间）<br>s1 survivor空间（存在时间更长的实例将会从so survivor空间移动到s1 survivor空间）<br>2.老年代<br>实例将从s1提升到tenured（终身代）<br>3.永久代（java se8中已被移除）<br>包含类，方法等细节的元信息</td>
+</tr>
+<tr>
+<td align="center">垃圾回收</td>
+<td align="left">System.gc()  Runtime.gc()<br>该请求机制提供一个启动GC过程的机会，但是启动由JVM负责 JVM可以拒绝这个请求  并不保证这些调用都将执行垃圾回收</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>GC</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇blog❤️</title>
+    <url>/2019/11/09/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>欢迎来到我的blog网站 <a href="https://shiguoqian.github.io/">半熟芝士草莓味</a>! 该网站建站于2019年11月9日，产生于网站主人的一个灵光一现，哈哈。其实就是想试着自己搭建一个个人网站，平时发点技术性、文学性或者是日常分享类的东西，都会放在不同类别上的，应该不会太混乱。网站搭建一共花费了一天时间，不难，照着教程做即可。正是因为这种搭建在github上的博客非常之简单，只是想简单了解一下，所以没有尝试购买服务器和域名的方式搭建网站。接下来可能会在这篇post上更新基于github搭建网站的基本步骤，有兴趣可以跟进一下，但速度应该不会太快，因为md语法我还得探索几天😂。另外，网站代码放在了github个人仓库里：<a href="https://github.com/shiguoqian/shiguoqian.github.io" target="_blank" rel="noopener">Github</a></p>
+<h2 id="搭建基本步骤"><a href="#搭建基本步骤" class="headerlink" title="搭建基本步骤"></a>搭建基本步骤</h2><h3 id="还没开始理清思路写-这里先放上本人搭建及个性化博客的时候看的教程"><a href="#还没开始理清思路写-这里先放上本人搭建及个性化博客的时候看的教程" class="headerlink" title="还没开始理清思路写..这里先放上本人搭建及个性化博客的时候看的教程"></a>还没开始理清思路写..这里先放上本人搭建及个性化博客的时候看的教程</h3><p><a href="https://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="noopener">hexo搭建基础教程</a><br><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">hexo个性化设置</a><br><a href="https://blog.csdn.net/qq_36457584/article/details/87878558" target="_blank" rel="noopener">hexo文章md语法</a></p>
 ]]></content>
   </entry>
 </search>

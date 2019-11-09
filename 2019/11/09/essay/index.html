@@ -50,28 +50,34 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="半熟芝士草莓味🍓 | blog">
-<meta property="og:url" content="https:&#x2F;&#x2F;shiguoqian.github.io&#x2F;index.html">
+  <meta name="description" content="csnd练习md编辑器    术语 解释说明    Java HotSpot虚拟机 不同JVM采用不同方法实现垃圾回收oracle se平台标准核心组件的一部分   JVM体系结构    Java堆内存 运行时 java实例被存放在堆内存区域当对象不在被引用时  满足条件后就会从堆内存移除  并且内存空间被回收堆内存三个主要区域：1.新生代eden空间（任何实例通过eden空间进入运行时内存区域）">
+<meta name="keywords" content="GC,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GC垃圾回收">
+<meta property="og:url" content="https:&#x2F;&#x2F;shiguoqian.github.io&#x2F;2019&#x2F;11&#x2F;09&#x2F;essay&#x2F;index.html">
 <meta property="og:site_name" content="半熟芝士草莓味🍓 | blog">
+<meta property="og:description" content="csnd练习md编辑器    术语 解释说明    Java HotSpot虚拟机 不同JVM采用不同方法实现垃圾回收oracle se平台标准核心组件的一部分   JVM体系结构    Java堆内存 运行时 java实例被存放在堆内存区域当对象不在被引用时  满足条件后就会从堆内存移除  并且内存空间被回收堆内存三个主要区域：1.新生代eden空间（任何实例通过eden空间进入运行时内存区域）">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;shiguoqian.github.io&#x2F;imgs&#x2F;JVM.png">
+<meta property="og:updated_time" content="2019-11-09T10:32:55.296Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;shiguoqian.github.io&#x2F;imgs&#x2F;JVM.png">
 
-<link rel="canonical" href="https://shiguoqian.github.io/">
+<link rel="canonical" href="https://shiguoqian.github.io/2019/11/09/essay/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>半熟芝士草莓味🍓 | blog</title>
+  <title>GC垃圾回收 | 半熟芝士草莓味🍓 | blog</title>
   
 
 
@@ -204,10 +210,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://shiguoqian.github.io/2019/11/09/essay/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,8 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/essay/" class="post-title-link" itemprop="url">GC垃圾回收</a>
+          GC垃圾回收
         </h1>
 
         <div class="post-meta">
@@ -258,7 +263,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://mp.csdn.net/mdeditor#" target="_blank" rel="noopener">csnd练习md编辑器</a></p>
+        <p><a href="https://mp.csdn.net/mdeditor#" target="_blank" rel="noopener">csnd练习md编辑器</a></p>
 <table>
 <thead>
 <tr>
@@ -284,84 +289,40 @@
 </tr>
 </tbody></table>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/GC/" rel="tag"><i class="fa fa-tag"></i># GC</a>
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i># Java</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://shiguoqian.github.io/2019/11/09/hello-world/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ShiGuoQian">
-      <meta itemprop="description" content="">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/09/hello-world/" rel="next" title="我的第一篇blog❤️">
+                  <i class="fa fa-chevron-left"></i> 我的第一篇blog❤️
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="半熟芝士草莓味🍓 | blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/hello-world/" class="post-title-link" itemprop="url">我的第一篇blog❤️</a>
-        </h1>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-09 10:43:43 / 修改时间：17:54:07" itemprop="dateCreated datePublished" datetime="2019-11-09T10:43:43+08:00">2019-11-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>欢迎来到我的blog网站 <a href="https://shiguoqian.github.io/">半熟芝士草莓味</a>! 该网站建站于2019年11月9日，产生于网站主人的一个灵光一现，哈哈。其实就是想试着自己搭建一个个人网站，平时发点技术性、文学性或者是日常分享类的东西，都会放在不同类别上的，应该不会太混乱。网站搭建一共花费了一天时间，不难，照着教程做即可。正是因为这种搭建在github上的博客非常之简单，只是想简单了解一下，所以没有尝试购买服务器和域名的方式搭建网站。接下来可能会在这篇post上更新基于github搭建网站的基本步骤，有兴趣可以跟进一下，但速度应该不会太快，因为md语法我还得探索几天😂。另外，网站代码放在了github个人仓库里：<a href="https://github.com/shiguoqian/shiguoqian.github.io" target="_blank" rel="noopener">Github</a></p>
-<h2 id="搭建基本步骤"><a href="#搭建基本步骤" class="headerlink" title="搭建基本步骤"></a>搭建基本步骤</h2><h3 id="还没开始理清思路写-这里先放上本人搭建及个性化博客的时候看的教程"><a href="#还没开始理清思路写-这里先放上本人搭建及个性化博客的时候看的教程" class="headerlink" title="还没开始理清思路写..这里先放上本人搭建及个性化博客的时候看的教程"></a>还没开始理清思路写..这里先放上本人搭建及个性化博客的时候看的教程</h3><p><a href="https://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="noopener">hexo搭建基础教程</a><br><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">hexo个性化设置</a><br><a href="https://blog.csdn.net/qq_36457584/article/details/87878558" target="_blank" rel="noopener">hexo文章md语法</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
