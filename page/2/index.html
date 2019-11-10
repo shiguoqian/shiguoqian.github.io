@@ -52,26 +52,26 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="半熟芝士草莓味🍓 | blog">
-<meta property="og:url" content="https:&#x2F;&#x2F;shiguoqian.github.io&#x2F;tags&#x2F;GC&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;shiguoqian.github.io&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="半熟芝士草莓味🍓 | blog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://shiguoqian.github.io/tags/GC/">
+<link rel="canonical" href="https://shiguoqian.github.io/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
+    isHome: true,
     isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: GC | 半熟芝士草莓味🍓 | blog</title>
+  <title>半熟芝士草莓味🍓 | blog</title>
   
 
 
@@ -203,49 +203,131 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">GC
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://shiguoqian.github.io/2019/11/09/essay/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ShiGuoQian">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半熟芝士草莓味🍓 | blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/09/essay/" class="post-title-link" itemprop="url">GC垃圾回收</a>
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-09 17:54:46" itemprop="dateCreated datePublished" datetime="2019-11-09T17:54:46+08:00">2019-11-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-10 12:31:51" itemprop="dateModified" datetime="2019-11-10T12:31:51+08:00">2019-11-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/09/essay/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/09/essay/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+          <p><a href="https://mp.csdn.net/mdeditor#" target="_blank" rel="noopener">csnd练习md编辑器</a></p>
+<table>
+<thead>
+<tr>
+<th align="center">术语</th>
+<th align="left">解释说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Java HotSpot虚拟机</td>
+<td align="left">不同JVM采用不同方法实现垃圾回收oracle se平台标准核心组件的一部分</td>
+</tr>
+<tr>
+<td align="center">JVM体系结构</td>
+<td align="left"><img src="/imgs/JVM.png" alt="Alt"></td>
+</tr>
+<tr>
+<td align="center">Java堆内存</td>
+<td align="left">运行时 java实例被存放在堆内存区域<br>当对象不在被引用时  满足条件后就会从堆内存移除  并且内存空间被回收<br><strong>堆内存三个主要区域</strong>：<br>1.新生代<br>eden空间（任何实例通过eden空间进入运行时内存区域）<br>so survior空间（存在时间长的实例将会从eden空间移动到so survivor空间）<br>s1 survivor空间（存在时间更长的实例将会从so survivor空间移动到s1 survivor空间）<br>2.老年代<br>实例将从s1提升到tenured（终身代）<br>3.永久代（java se8中已被移除）<br>包含类，方法等细节的元信息</td>
+</tr>
+<tr>
+<td align="center">垃圾回收</td>
+<td align="left">System.gc()  Runtime.gc()<br>该请求机制提供一个启动GC过程的机会，但是启动由JVM负责 JVM可以拒绝这个请求  并不保证这些调用都将执行垃圾回收</td>
+</tr>
+</tbody></table>
+
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <div>
+    
+</div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-09T17:54:46+08:00"
-              content="2019-11-09">
-          11-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/09/essay/" itemprop="url">
-            <span itemprop="name">GC垃圾回收</span>
-          </a>
-      </h2>
-
-    </header>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 
 
